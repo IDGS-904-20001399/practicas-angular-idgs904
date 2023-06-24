@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row">
+    <div class="mb-3">
+      <label for="banda1"
+             class="form-label">Banda 1</label>
+      <select [(ngModel)]="banda1"
+              class="form-select"
+              (change)="calcular()"
+              [style.background]="banda1.color">
+        <option *ngFor="let banda of banda1Op"
+                [style.background]="banda.color"
+                [ngValue]="banda">{{banda.text}}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="banda1"
+             class="form-label">Banda 2</label>
+      <select [(ngModel)]="banda2"
+              class="form-select"
+              (change)="calcular()"
+              [style.background]="banda2.color">
+        <option *ngFor="let banda of bandas2Op"
+                [style.background]="banda.color"
+                [ngValue]="banda">{{banda.text}}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="banda1"
+             class="form-label">Banda 3</label>
+      <select [(ngModel)]="banda3"
+              class="form-select"
+              (change)="calcular()"
+              [style.background]="banda3.color">
+        <option *ngFor="let banda of bandas3Op"
+                [style.background]="banda.color"
+                [ngValue]="banda">{{banda.text}}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="banda1"
+             class="form-label">Tolerancia</label>
+      <select [(ngModel)]="tolerancia"
+              class="form-select"
+              (change)="calcular()"
+              [style.background]="tolerancia.color">
+        <option *ngFor="let item of toleranciasOp"
+                [style.background]="item.color"
+                [ngValue]="item">{{item.text}}</option>
+      </select>
+    </div>
+
+    <!-- <button (click)="calcular()"
+            class="btn btn-primary">Calcular</button> -->
+
+    <table>
+      <thead>
+        <tr>
+          <td>Banda 1</td>
+          <td>Banda 2</td>
+          <td>Banda 3</td>
+          <td>Tolerancia</td>
+          <td>Resultado</td>
+          <td>Mínimo</td>
+          <td>Máximo</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td [style.background]="banda1.color">{{banda1.text}}</td>
+          <td [style.background]="banda2.color">{{banda2.text}}</td>
+          <td [style.background]="banda3.color">{{banda3.text}}</td>
+          <td [style.background]="tolerancia.color">{{tolerancia.text}}</td>
+          <td>{{ resultado }}</td>
+          <td>{{ minimo }}</td>
+          <td>{{ maximo }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

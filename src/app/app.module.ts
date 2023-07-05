@@ -8,10 +8,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Distancia2puntosModule } from './distancia2puntos/distancia2puntos/distancia2puntos.module';
 import { ResistenciasModule } from './resistencias/resistencias.module';
+import { CineModule } from './cine/cine.module';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,6 +23,7 @@ import { ResistenciasModule } from './resistencias/resistencias.module';
     Distancia2puntosModule, 
     ResistenciasModule,
     CommonModule,
+    CineModule,
     FormsModule
   ],
   providers: [],
